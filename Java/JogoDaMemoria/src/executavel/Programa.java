@@ -29,6 +29,8 @@ public class Programa {
 	public static int valor1;
 
 	public static int valor2;
+	
+	public static int contadorDeTentativas = 0;
 
 	public static void main(String[] args) {
 
@@ -37,12 +39,11 @@ public class Programa {
 	}
 
 	public static void jogoDaMemoria() {
+		
 
 		aleatorizarTabela();
 
 		do {
-
-			limparVariaveis();
 
 			exibirTabelaAtual();
 
@@ -75,6 +76,13 @@ public class Programa {
 			tentarAtribuirValorNaTabelaAtual();
 
 		} while (!fimDeJogo());
+		
+		System.out.println();
+		exibirTabelaAtual();
+		
+		System.out.println("FIM DE JOGO!");
+		
+		System.out.printf("TENTATIVAS: " + contadorDeTentativas);
 
 	}
 
@@ -142,10 +150,6 @@ public class Programa {
 
 		do {
 
-			linha1 = 0;
-
-			coluna1 = 0;
-
 			System.out.println(texto);
 
 			linha1 = sc.nextInt() - 1;
@@ -179,10 +183,6 @@ public class Programa {
 		boolean coordenadaValida = false;
 
 		do {
-
-			linha2 = 0;
-
-			coluna2 = 0;
 
 			System.out.println(texto);
 
@@ -301,6 +301,7 @@ public class Programa {
 			tabelaDoJogador[linha1][coluna1] = valor1;
 
 			tabelaDoJogador[linha2][coluna2] = valor2;
+			contadorDeTentativas++;
 
 		} else {
 
