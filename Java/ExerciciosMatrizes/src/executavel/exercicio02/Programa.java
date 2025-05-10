@@ -22,7 +22,7 @@ public class Programa {
 		
 		
 		
-		System.out.println("A SOMA DOS VALORES E" + somaDaMatriz(matriz) );
+		System.out.println("A MULTIPLICACAO DOS VALORES E " + multiplicacaoDaMatriz(matriz) );
 		
 		
 		
@@ -40,15 +40,15 @@ public class Programa {
 		System.out.println();
 	}
 	
-	public static int somaDaMatriz(int[][] matriz) {
-		int soma = 0;
+	public static int multiplicacaoDaMatriz(int[][] matriz) {
+		int multiplicacao = 1;
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 2; j++) {
-				soma += matriz[i][j];
+				multiplicacao *= matriz[i][j];
 				
 			}
 		}
-		return soma;
+		return multiplicacao;
 	}
 	
 	public static void imprimirMatriz(int[][] matriz) {
