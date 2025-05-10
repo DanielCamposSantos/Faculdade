@@ -301,13 +301,14 @@ public class Programa {
 			tabelaDoJogador[linha1][coluna1] = valor1;
 
 			tabelaDoJogador[linha2][coluna2] = valor2;
-			contadorDeTentativas++;
+			
 
 		} else {
 
 			exibirTabelaErrada(linha1, coluna1, linha2, coluna2);
 
 		}
+		contadorDeTentativas++;
 
 		System.out.println();
 
