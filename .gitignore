@@ -53,3 +53,4 @@ build/
 # Sistema
 # ----------------------
 Thumbs.db
+/.metadata/
