@@ -6,5 +6,7 @@ public enum TipoPeca {
     BISPO,
     TORRE,
     RAINHA,
-    REI
+    REI;
+
+
 }
