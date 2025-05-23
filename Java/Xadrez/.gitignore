@@ -1,7 +1,7 @@
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
-!**/src/test/
+!**/src/test/**/out/
 
 ### Eclipse ###
 .apt_generated
@@ -27,3 +27,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Test Files ###
+/src/test/**/*.class
+/src/test/reports/
+/src/test/logs/
