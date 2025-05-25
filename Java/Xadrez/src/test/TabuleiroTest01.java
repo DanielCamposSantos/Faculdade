@@ -4,8 +4,8 @@ import dominio.Tabuleiro;
 
 public class TabuleiroTest01 {
     public static void main(String[] args) {
-        Tabuleiro tabuleiro = new Tabuleiro();
+        Tabuleiro tabuleiro1 = new Tabuleiro();
+        tabuleiro1.exibir();
 
-        tabuleiro.exibir();
     }
 }
