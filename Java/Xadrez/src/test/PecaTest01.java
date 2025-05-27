@@ -2,21 +2,12 @@ package test;
 
 import dominio.Peca;
 import static dominio.TipoPeca.*;
-import static dominio.TimeJogo.*;
+import static dominio.Jogador.*;
 
 public class PecaTest01 {
     public static void main(String[] args) {
-        Peca peca = new Peca(BISPO,BRANCO);
-
-        System.out.println("TIPO DA PEÇA = " + peca);
-        System.out.println("COR = " + peca.getTime());
-
-//        Peca peca1 = new Peca(PEAO);
-
-//        System.out.println(peca1.getTipoPeca());
-
-
-        System.out.println();
-        System.out.println("♙");
+        Peca peca = new Peca(PEAO,BRANCO);
+        
+        System.out.println(peca.getTipoPeca());
     }
 }

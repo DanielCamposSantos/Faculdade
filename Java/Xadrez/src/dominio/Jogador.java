@@ -27,7 +27,7 @@ public enum Jogador {
     
     
     public String colorirFundo(String texto) {
-    	return 
+    	return corTexto + texto + RESET;
     }
     
     public abstract int sentidoPeca();

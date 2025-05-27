@@ -1,13 +1,13 @@
 package dominio;
 
 public enum TipoPeca {
-    PEAO(" ♟ "),
+	PEAO(" ♟ "),
     CAVALO(" ♞ "),
     BISPO(" ♝ "),
     TORRE(" ♜ "),
     RAINHA(" ♛ "),
     REI(" ♚ ");
-	
+    
 	private String representacao;
 	
 	

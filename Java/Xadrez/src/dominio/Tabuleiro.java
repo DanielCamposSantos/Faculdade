@@ -19,10 +19,6 @@ public class Tabuleiro {
         Peca peca = tabuleiro[linhaAtual][colunaAtual];
 
 
-
-
-
-
     }
 
 
@@ -85,7 +81,7 @@ public class Tabuleiro {
             System.out.println("[  "+ ESPACO_GRANDE +"  ]");
         } else{
 
-            System.out.println("[" + tabuleiro[linha][coluna].getTipoPeca().getRepresentacao(null) + "]");
+            System.out.println("[" + tabuleiro[linha][coluna] + "]");
         }
     }
 
@@ -116,9 +112,9 @@ public class Tabuleiro {
 
                 } else{
                     if (linha%2 == 0 ^ coluna % 2 == 0){
-                        System.out.print(FUNDO_CASA_CLARA + tabuleiro[linha][coluna].getTipoPeca().representacao + RESET);
+                        System.out.print(FUNDO_CASA_CLARA + tabuleiro[linha][coluna].getTipoPeca() + RESET);
                     } else {
-                        System.out.print(FUNDO_CASA_ESCURA + tabuleiro[linha][coluna].getTipoPeca().representacao + RESET);
+                        System.out.print(FUNDO_CASA_ESCURA + tabuleiro[linha][coluna].getTipoPeca() + RESET);
                     }
 
                 }

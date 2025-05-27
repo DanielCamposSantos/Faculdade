@@ -15,10 +15,8 @@ public class Peca {
 
 
 
-
-
-    public TipoPeca getTipoPeca() {
-        return tipoPeca;
+    public String getTipoPeca() {
+    	return this.tipoPeca.getRepresentacao(jogador);
     }
 
     public Jogador getJogador() {
