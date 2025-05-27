@@ -1,10 +1,11 @@
 package dominio;
 
-import static dominio.TipoPeca.*;
 
 public class Peca {
-    private TipoPeca tipoPeca;
-    private TimeJogo time;
+    private final TipoPeca tipoPeca;
+    private final TimeJogo time;
+    protected int quantidadeMovimentos = 0;
+
     private final String TEXTO_BRANCO = "\u001B[38;2;255;253;230m";
     private final String TEXTO_PRETO = "\u001B[38;2;40;40;40m";
     private final String RESET = "\u001B[0m";
@@ -13,7 +14,12 @@ public class Peca {
     public Peca(TipoPeca tipoPeca, TimeJogo time) {
         this.tipoPeca = tipoPeca;
         this.time = time;
+
     }
+
+
+
+
 
     public TipoPeca getTipoPeca() {
         return tipoPeca;
@@ -60,6 +66,7 @@ public class Peca {
 
         return corPeca + saida +RESET;
     }
+
 
 
 }

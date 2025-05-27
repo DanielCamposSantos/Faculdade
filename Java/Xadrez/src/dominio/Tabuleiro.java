@@ -1,16 +1,30 @@
 package dominio;
 
 
-import java.util.Arrays;
-
 public class Tabuleiro {
     private Peca[][] tabuleiro = new Peca[8][8];
-
-    private final String ESPACO = " \u3000 ";
-
+    private final String ESPACO_GRANDE = "\u3000";
     private final String FUNDO_CASA_CLARA = "\u001B[48;2;240;217;181m";  // Bege claro tradicional
     private final String FUNDO_CASA_ESCURA = "\u001B[48;2;181;136;99m";
     private final String RESET = "\u001B[0m";
+
+
+    public void pegarPosicaoPeca(int linha, int coluna){
+        System.out.println(tabuleiro[linha][coluna].getTipoPeca());
+    }
+
+
+
+    public void verificarPossivelMovimento(int linhaAtual, int colunaAtual){
+        Peca peca = tabuleiro[linhaAtual][colunaAtual];
+
+
+
+
+
+
+    }
+
 
 
 
@@ -36,8 +50,6 @@ public class Tabuleiro {
         }
         return peoes;
     }
-
-
 
     public Tabuleiro() {
         Peca[] peoesPretos = criarPeao(TimeJogo.PRETO);
@@ -68,11 +80,9 @@ public class Tabuleiro {
         }
     }
 
-
-
     public void imprimirPeca(int linha,int coluna){
         if (tabuleiro[linha][coluna] == null){
-            System.out.println("[  "+ ESPACO +"  ]");
+            System.out.println("[  "+ ESPACO_GRANDE +"  ]");
         } else{
 
             System.out.println("[" + tabuleiro[linha][coluna].getTimePeca() + "]");
@@ -82,14 +92,26 @@ public class Tabuleiro {
 
 
     public void exibir(){
+        char[] letras = {'a','b','c','d','e','f','g','h'};
+
+        System.out.print("       "); // Usando espaço estreito ( )
+
+
+        for (char letra:letras) {
+            System.out.print(letra + ESPACO_GRANDE + "  ");
+        }
+        System.out.println();
+
+
 
         for (int linha = 0; linha < 8; linha++) {
+                System.out.print(linha+1 + " - ");
             for (int coluna = 0; coluna < 8; coluna++) {
                 if (tabuleiro[linha][coluna] == null){
                     if (linha%2 == 0 ^ coluna % 2 == 0){
-                        System.out.print(FUNDO_CASA_CLARA + ESPACO + RESET);
+                        System.out.print(FUNDO_CASA_CLARA + " " + ESPACO_GRANDE + " " + RESET);
                     } else {
-                        System.out.print(FUNDO_CASA_ESCURA + ESPACO + RESET);
+                        System.out.print(FUNDO_CASA_ESCURA + " " + ESPACO_GRANDE + " " + RESET);
                     }
 
                 } else{
@@ -102,8 +124,10 @@ public class Tabuleiro {
                 }
 
             }
-            System.out.println();
+                System.out.println();
+
         }
+
     }
 
 
