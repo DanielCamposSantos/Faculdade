@@ -28,34 +28,34 @@ public class Tabuleiro {
 
 
 
-    private Peca[] criarNobres(TimeJogo time){
+    private Peca[] criarNobres(Jogador jogador){
         Peca[] peoes = new Peca[8];
 
-        peoes[0] = new Peca(TipoPeca.TORRE,time);
-        peoes[1] = new Peca(TipoPeca.CAVALO,time);
-        peoes[2] = new Peca(TipoPeca.BISPO,time);
-        peoes[4] = new Peca(TipoPeca.RAINHA,time);
-        peoes[3] = new Peca(TipoPeca.REI,time);
-        peoes[5] = new Peca(TipoPeca.BISPO,time);
-        peoes[6] = new Peca(TipoPeca.CAVALO,time);
-        peoes[7] = new Peca(TipoPeca.TORRE,time);
+        peoes[0] = new Peca(TipoPeca.TORRE,jogador);
+        peoes[1] = new Peca(TipoPeca.CAVALO,jogador);
+        peoes[2] = new Peca(TipoPeca.BISPO,jogador);
+        peoes[4] = new Peca(TipoPeca.RAINHA,jogador);
+        peoes[3] = new Peca(TipoPeca.REI,jogador);
+        peoes[5] = new Peca(TipoPeca.BISPO,jogador);
+        peoes[6] = new Peca(TipoPeca.CAVALO,jogador);
+        peoes[7] = new Peca(TipoPeca.TORRE,jogador);
 
         return peoes;
     }
 
-    private Peca[] criarPeao(TimeJogo time){
+    private Peca[] criarPeao(Jogador jogador){
         Peca[] peoes = new Peca[8];
         for (int i = 0; i < 8; i++) {
-            peoes[i] = new Peca(TipoPeca.PEAO,time);
+            peoes[i] = new Peca(TipoPeca.PEAO,jogador);
         }
         return peoes;
     }
 
     public Tabuleiro() {
-        Peca[] peoesPretos = criarPeao(TimeJogo.PRETO);
-        Peca[] peoesBrancos = criarPeao(TimeJogo.BRANCO);
-        Peca[] nobresPretos = criarNobres(TimeJogo.PRETO);
-        Peca[] nobresBrancos = criarNobres(TimeJogo.BRANCO);
+        Peca[] peoesPretos = criarPeao(Jogador.PRETO);
+        Peca[] peoesBrancos = criarPeao(Jogador.BRANCO);
+        Peca[] nobresPretos = criarNobres(Jogador.PRETO);
+        Peca[] nobresBrancos = criarNobres(Jogador.BRANCO);
 
 
         for (int linha = 0; linha < 8; linha++) {
@@ -85,7 +85,7 @@ public class Tabuleiro {
             System.out.println("[  "+ ESPACO_GRANDE +"  ]");
         } else{
 
-            System.out.println("[" + tabuleiro[linha][coluna].getTimePeca() + "]");
+            System.out.println("[" + tabuleiro[linha][coluna].getTipoPeca().getRepresentacao(null) + "]");
         }
     }
 
@@ -116,9 +116,9 @@ public class Tabuleiro {
 
                 } else{
                     if (linha%2 == 0 ^ coluna % 2 == 0){
-                        System.out.print(FUNDO_CASA_CLARA + tabuleiro[linha][coluna].getTimePeca() + RESET);
+                        System.out.print(FUNDO_CASA_CLARA + tabuleiro[linha][coluna].getTipoPeca().representacao + RESET);
                     } else {
-                        System.out.print(FUNDO_CASA_ESCURA + tabuleiro[linha][coluna].getTimePeca() + RESET);
+                        System.out.print(FUNDO_CASA_ESCURA + tabuleiro[linha][coluna].getTipoPeca().representacao + RESET);
                     }
 
                 }
