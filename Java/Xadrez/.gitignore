@@ -32,3 +32,4 @@ bin/
 /src/test/**/*.class
 /src/test/reports/
 /src/test/logs/
+/src/test/**/*.java
