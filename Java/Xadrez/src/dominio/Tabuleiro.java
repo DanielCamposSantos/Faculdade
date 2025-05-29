@@ -4,25 +4,14 @@ package dominio;
 public class Tabuleiro {
     private Peca[][] tabuleiro = new Peca[8][8];
     private final String ESPACO_GRANDE = "\u3000";
+    private final String ESPACO_PEQUENO = "\u202F";
     private final String FUNDO_CASA_CLARA = "\u001B[48;2;240;217;181m";  // Bege claro tradicional
     private final String FUNDO_CASA_ESCURA = "\u001B[48;2;181;136;99m";
     private final String RESET = "\u001B[0m";
 
-
-    public void pegarPosicaoPeca(int linha, int coluna){
-        System.out.println(tabuleiro[linha][coluna].getTipoPeca());
+    public Peca getPeca(int x, int y) {
+        return tabuleiro[x][y];
     }
-
-
-
-    public void verificarPossivelMovimento(int linhaAtual, int colunaAtual){
-        Peca peca = tabuleiro[linhaAtual][colunaAtual];
-
-
-    }
-
-
-
 
     private Peca[] criarNobres(Jogador jogador){
         Peca[] peoes = new Peca[8];
@@ -76,25 +65,62 @@ public class Tabuleiro {
         }
     }
 
-    public void imprimirPeca(int linha,int coluna){
-        if (tabuleiro[linha][coluna] == null){
-            System.out.println("[  "+ ESPACO_GRANDE +"  ]");
-        } else{
+    public Tabuleiro(int x, int y) {
+        Peca[] peoesPretos = criarPeao(Jogador.PRETO);
+        Peca[] peoesBrancos = criarPeao(Jogador.BRANCO);
+        Peca[] nobresPretos = criarNobres(Jogador.PRETO);
+        Peca[] nobresBrancos = criarNobres(Jogador.BRANCO);
 
-            System.out.println("[" + tabuleiro[linha][coluna] + "]");
+
+        for (int linha = 0; linha < 8; linha++) {
+            for (int coluna = 0; coluna < 8; coluna++) {
+                switch (linha){
+                    case 0:
+                        tabuleiro[linha][coluna] = nobresPretos[coluna];
+                        break;
+                    case 1:
+                        tabuleiro[linha][coluna] = peoesPretos[coluna];
+                        break;
+                    case 6:
+                        tabuleiro[linha][coluna] = peoesBrancos[coluna];
+                        break;
+                    case 7:
+                        tabuleiro[linha][coluna] = nobresBrancos[coluna];
+                        break;
+                    default:
+                        tabuleiro[linha][coluna] = null;
+                }
+
+                if (linha != x || coluna != y){
+                    tabuleiro[linha][coluna] = null;
+                }
+            }
+
+
         }
+
+
+
+
     }
 
+    public void addPeca(int x,int y,TipoPeca tipoPeca,Jogador jogador){
+        tabuleiro[x][y] = new Peca(tipoPeca,jogador);
+    }
+
+    private String repetir(String texto,int quantidade){
+        return texto + texto.repeat(Math.max(0, quantidade - 1));
+    }
 
 
     public void exibir(){
         char[] letras = {'a','b','c','d','e','f','g','h'};
 
-        System.out.print("       "); // Usando espaço estreito ( )
 
+        System.out.print(repetir(" ",5) + ESPACO_PEQUENO);
 
         for (char letra:letras) {
-            System.out.print(letra + ESPACO_GRANDE + "  ");
+            System.out.print(letra + ESPACO_GRANDE + repetir(ESPACO_PEQUENO,2));
         }
         System.out.println();
 
@@ -126,5 +152,8 @@ public class Tabuleiro {
 
     }
 
+    public boolean isVazio(int x, int y){
+        return tabuleiro[x][y] == null;
+    }
 
 }

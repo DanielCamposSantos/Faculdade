@@ -19,11 +19,15 @@ public class Peca {
     	return this.tipoPeca.getRepresentacao(jogador);
     }
 
+    public TipoPeca getTipoPecaObject(){
+        return this.tipoPeca;
+    }
+
     public Jogador getJogador() {
         return jogador;
     }
 
-    
+
 
        
 
