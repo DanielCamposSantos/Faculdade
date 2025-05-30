@@ -1,0 +1,5 @@
+-Dfile.encoding=UTF-8
+-classpath
+"C:\\Users\\200037372\\Documents\\GitHub\\Faculdade\\Java\\Xadrez\\bin"
+-XX:+ShowCodeDetailsInExceptionMessages
+test.TabuleiroTest01
