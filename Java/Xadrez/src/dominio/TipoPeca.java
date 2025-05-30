@@ -85,7 +85,7 @@ public enum TipoPeca {
         int linhaAtual = linhaInicial + passoLinha;
         int colunaAtual = colunaInicial + passoColuna;
 
-
+        tabuleiro.setPeca(linhaInicial,);
         return true;
     }
 }
