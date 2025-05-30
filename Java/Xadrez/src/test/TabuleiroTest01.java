@@ -15,7 +15,7 @@ public class TabuleiroTest01 {
 
         tabuleiro1.getPeca(1,1).getTipoPecaObject().isDiagonal(1,1,0,0,tabuleiro1);
 
-
+        	System.out.println("Olá");
 
 
 
