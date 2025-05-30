@@ -71,4 +71,21 @@ public enum TipoPeca {
 
         return true;
     }
+
+    public boolean isDiagonal(int linhaInicial, int colunaInicial, int linhaAlvo, int colunaAlvo, Tabuleiro tabuleiro){
+        if (linhaInicial == linhaAlvo || colunaInicial == colunaAlvo) return false;
+
+        int passoLinha = Integer.compare(linhaAlvo,linhaInicial);
+        int passoColuna = Integer.compare(colunaAlvo,colunaInicial);
+
+        System.out.println("LINHA ATUAL = " + passoLinha);
+        System.out.println("COLUNA ATUAL = " + passoColuna);
+
+
+        int linhaAtual = linhaInicial + passoLinha;
+        int colunaAtual = colunaInicial + passoColuna;
+
+        tabuleiro.setPeca(linhaInicial,);
+        return true;
+    }
 }
