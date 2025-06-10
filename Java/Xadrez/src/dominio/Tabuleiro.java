@@ -155,5 +155,34 @@ public class Tabuleiro {
         return tabuleiro[x][y] == null;
     }
 
+    public boolean jogadorArversario(int linhaInicial, int colunaInicial, int linhaAlvo, int colunaAlvo){
+        if (isVazio(linhaAlvo,colunaAlvo)) return false;
+
+
+
+        return tabuleiro[linhaInicial][colunaInicial].getJogador() != tabuleiro[linhaAlvo][linhaAlvo].getJogador();
+    }
+
+    public void mover(int linhaInicial, int colunaInicial, int linhaAlvo, int colunaAlvo,Tabuleiro tab){
+        try {
+            Peca selecionada = tabuleiro[linhaInicial][colunaInicial];
+            TipoPeca tipoSelecionada = selecionada.getTipoPecaObject();
+            boolean movimentoValido = tipoSelecionada.movimentoValido(linhaInicial,colunaInicial,linhaAlvo,colunaAlvo,tab);
+            boolean adversario = jogadorArversario(linhaInicial,colunaInicial,linhaAlvo,colunaAlvo);
+            Peca alvo = tabuleiro[linhaAlvo][colunaAlvo];
+
+            if (movimentoValido && movimentoValido){
+                tabuleiro[linhaAlvo][colunaAlvo] = selecionada;
+                tabuleiro[linhaInicial][colunaInicial] = null;
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
 
 }

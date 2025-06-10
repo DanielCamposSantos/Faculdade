@@ -69,6 +69,7 @@ public enum TipoPeca {
 	REI(" ♚ ") {
 		@Override
 		public boolean movimentoValido(int linhaInicial, int colunaInicial, int linhaAlvo, int colunaAlvo, Tabuleiro tabuleiro) {
+
 			return false;
 		}
 	};
