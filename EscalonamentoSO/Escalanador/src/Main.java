@@ -15,23 +15,11 @@ public class Main {
         processos.add(p3);
         processos.add(p4);
 
-        EscalonadorFIFO escalonadorFIFO = new EscalonadorFIFO();
-        escalonadorFIFO.simular(processos);
-        imprimir(processos);
-        System.out.println();
-        simular(processos);
-
-        for (int i = 0; i < 10; i++) {
-            System.out.println();
-
-        }
-
-        EscalonadorSJF escalonadorSJF= new EscalonadorSJF();
+        EscalonadorSJF escalonadorSJF = new EscalonadorSJF();
         escalonadorSJF.simular(processos);
         imprimir(processos);
         System.out.println();
         simular(processos);
-
 
     }
 
