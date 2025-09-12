@@ -19,7 +19,7 @@ public class EscalonadorSJF implements Escalonador{
                 }
             }
 
-            
+
 
 
             for (Processo p : fila){
